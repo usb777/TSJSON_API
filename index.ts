@@ -5,6 +5,7 @@ import { corsFilter } from './middleware/cors-filter'
 /**  import { reimbRouter } from './routers/reimb-router' */
 import { sessionMiddleware } from './middleware/session-middleware'
 import { userRouter } from './routers/user-router'
+import { roleRouter } from './routers/role-router'
 
 // I call this express function, and it returns an object I can use to build my api
 const app = express()
@@ -27,11 +28,11 @@ app.use(corsFilter)
 
 app.use('/users', userRouter)
 
+app.use('/roles', roleRouter)
 //I can change the order of my endpoints
 // and express will run a request through all matching endpoints in the order they were declared
 // app.use('/', (req,res)=>{
 //     res.send('Hello World')
 // })
 
-app.listen(2002, ()=>{ console.log('app has started on port 2002');
-})
+app.listen(1983, ()=>{ console.log('app has started on port 1983'); })

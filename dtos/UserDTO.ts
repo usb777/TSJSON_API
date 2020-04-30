@@ -8,8 +8,10 @@ export class UserDTO{
   email: string
   roleid: number
   role: string
+  gender: string
+
   constructor( userid: number,username:string,password: string,
-     firstname:string,lastname:string,email:string,roleid:number,role:string)
+     firstname:string,lastname:string,email:string,roleid:number,role:string, gender: string)
   { this.userid = userid       //1
     this.username = username;  //2
     this.password = password;  //3
@@ -18,5 +20,6 @@ export class UserDTO{
     this.email = email;        //6
     this.roleid = roleid;      //7
     this.role = role;          //8
+    this.gender = gender       //9
   }
 }

@@ -11,6 +11,7 @@ export function userDTOToUserConverter(userDTO:UserDTO):User
         userDTO.firstname,
         userDTO.lastname,
         userDTO.email,
-        new Role(userDTO.roleid, userDTO.role) 
+        new Role(userDTO.roleid, userDTO.role),
+        userDTO.gender 
     )
 }
