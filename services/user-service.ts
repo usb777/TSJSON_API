@@ -1,4 +1,4 @@
-import { daoFindUserByUsernameAndPassword, daoFindAllUsers,daoFindUserById, daoUpdateUser } from "../rep_dao/user-dao";
+import { daoFindUserByUsernameAndPassword, daoFindAllUsers,daoFindUserById, daoUpdateUser, daoInsertUser, daoDeleteUserById } from "../rep_dao/user-dao";
 import { User } from "../models/User";
 import { UserDTO } from "../dtos/UserDTO";
 
@@ -14,7 +14,7 @@ export async function findUserByUsernameAndPassword(username:string, password:st
    return await daoFindUserByUsernameAndPassword(username,password)
 }
 
-
+// find all users
 export async function findAllUsers():Promise<User[]>
 {
    // I write to a different table, who just sent this request
@@ -25,13 +25,27 @@ export async function findAllUsers():Promise<User[]>
 
 
 
-
+// find User by Id
 export async function findUserById(id:number):Promise<User>
 {
    return await daoFindUserById(id)
 }
 
+//update User
 export async function updateOneUser(newUser:UserDTO):Promise<User>
 {
    return await daoUpdateUser(newUser)
+}
+
+//insert User
+export async function insertOneUser(newUser:UserDTO):Promise<User>
+{
+   return await daoInsertUser(newUser)
+}
+
+
+//delete User
+export async function deleteOneUser(id:number):Promise<User>
+{
+   return await daoDeleteUserById(id)
 }

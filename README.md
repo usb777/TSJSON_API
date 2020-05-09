@@ -22,4 +22,3 @@ npm install --save body-parser
 ============starting project=================
 
 ts-node index.ts
-
